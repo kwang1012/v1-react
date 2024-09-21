@@ -150,7 +150,9 @@ export function getPubs(sort?: string, selected?: boolean, group?: boolean) {
   }
   if (sort) {
     const asc = sort === 'asc' ? 1 : -1;
-    _pubs = _pubs.sort((a, b) => (moment(a.date).isBefore(moment(b.date)) ? -1 * asc : 1 * asc));
+    _pubs = _pubs.sort((a, b) =>
+      moment(a.date, 'MM/DD/YYYY').isBefore(moment(b.date, 'MM/DD/YYYY')) ? -1 * asc : 1 * asc
+    );
   }
   return _pubs;
 }

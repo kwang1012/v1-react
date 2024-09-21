@@ -8,7 +8,7 @@ import moment from 'moment';
 import { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ExperienceCard from 'src/components/ExperienceCard';
 import { useSelector } from 'react-redux';
 import { RootState } from 'src/store';
@@ -26,19 +26,24 @@ export default function Home() {
   const setting = useSelector((state: RootState) => state.setting);
 
   const mainRef = useRef(null);
+  const [count, setCount] = useState(0);
   useEffect(() => {
+    if (count == 0) {
+      setCount(1);
+      return;
+    }
     const q = gsap.utils.selector(mainRef);
     const sectionList = q('section');
-    // sectionList.forEach((section) => {
-    //   gsap.from(section, {
-    //     ease: 'power3',
-    //     duration: 1.2,
-    //     opacity: 0,
-    //     y: 50,
-    //     scrollTrigger: section,
-    //   });
-    // });
-  }, [mainRef]);
+    sectionList.forEach((section) => {
+      gsap.from(section, {
+        ease: 'power3',
+        duration: 1.2,
+        opacity: 0,
+        y: 50,
+        scrollTrigger: section,
+      });
+    });
+  }, [mainRef, count]);
 
   return (
     <div ref={mainRef}>
@@ -46,7 +51,9 @@ export default function Home() {
         <img src="/avatar.jpg" width={182} height={182} className="rounded-full object-cover" />
         <div className="ml-10">
           <h1 className="mb-0">Kai Wang</h1>
-          <div>A second-year PhD student @ UIUC</div>
+          <div>
+            A second-year PhD student @ <span className="font-bold">UIUC</span>
+          </div>
           <div className="flex text-secondary my-2">
             {simpleProviders.map((provider, i) => (
               <FontAwesomeIcon

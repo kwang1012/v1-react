@@ -39,19 +39,48 @@ const rExps = [
     place: 'Taipei, Taiwan',
     position: 'System Architect',
     startDate: '5/1/2021',
-    endDate: "3/10/2023",
-    projects: [
-      "Forest Runtime",
-      "Pipeline Parallelism for Deep Learning"
-    ],
+    endDate: '3/10/2023',
+    projects: ['Forest Runtime', 'Pipeline Parallelism for Deep Learning'],
   },
 ];
+
+const tExps = [
+  {
+    title: 'Computer Science Department',
+    corp: 'University of Illinois Urbana-Champaign',
+    place: 'Urbana, IL, USA',
+    position: 'Graduate Teaching Assistant',
+    startDate: 'Fall 2024',
+    projects: ['CS425 Distributed Systems'],
+  },
+  {
+    title: 'Computer Science Department',
+    corp: ' National Tsing Hua University',
+    place: 'Hsinchu, Taiwan',
+    position: 'Graduate Teaching Assistant',
+    startDate: 'Fall 2022',
+    projects: ['CS542200 Parallel Programming'],
+  },
+]
 
 export function getRExps(sort?: string) {
   let _exps = rExps;
   if (sort) {
     const asc = sort === 'asc' ? 1 : -1;
-    _exps = _exps.sort((a, b) => (moment(a.startDate).isBefore(moment(b.startDate)) ? -1 * asc : 1 * asc));
+    _exps = _exps.sort((a, b) =>
+      moment(a.startDate, 'MM/DD/YYYY').isBefore(moment(b.startDate, 'MM/DD/YYYY')) ? -1 * asc : 1 * asc
+    );
+  }
+  return _exps;
+}
+
+export function getTExps(sort?: string) {
+  let _exps = tExps;
+  if (sort) {
+    const asc = sort === 'asc' ? 1 : -1;
+    _exps = _exps.sort((a, b) =>
+      moment(a.startDate, 'MM/DD/YYYY').isBefore(moment(b.startDate, 'MM/DD/YYYY')) ? -1 * asc : 1 * asc
+    );
   }
   return _exps;
 }

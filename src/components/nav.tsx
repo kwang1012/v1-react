@@ -134,7 +134,6 @@ export default function Nav({ scrollTo, isSimple }: Props) {
       component="nav"
       className={styles.nav}
       ref={ref}
-      bgcolor="background.default"
       style={{ boxShadow: !isSimple ? theme.palette.shadow : '', borderBottom: isSimple ? '1px #eee solid' : '' }}
     >
       <ul>

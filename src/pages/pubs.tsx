@@ -1,5 +1,4 @@
 import SimplePublicationCard from 'src/components/SimplePublicationCard';
-import moment from 'moment';
 import { getPubs } from 'src/const/pubs';
 
 const groups = getPubs(undefined, undefined, true);

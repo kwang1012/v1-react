@@ -29,7 +29,7 @@ import {
   BrowserRouter,
 } from 'react-router-dom';
 import Home from './pages/home';
-import SimpleLayout from './layouts/simple-layout';
+import SimpleLayout from './layouts/SimpleLayout';
 import PublicationView from './pages/pubs';
 import ExperienceView from './pages/experience';
 import MiscellaneousView from './pages/miscellaneous';
@@ -129,17 +129,9 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-        {/* <SimpleLayout>
-          <Outlet />
-        </SimpleLayout> */}
       </ThemeProvider>
     </StyledEngineProvider>
   );
 }
-
-// App.propTypes = {
-//   Component: PropTypes.elementType.isRequired,
-//   pageProps: PropTypes.object.isRequired,
-// };
 
 export default App;
