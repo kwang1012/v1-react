@@ -53,7 +53,7 @@ export default function AppEventCard({ event }: Props) {
         </div>
       )}
       <div className="mt-2 text-gray-500 text-sm">
-        {format(event.start.dateTime)}-{format(event.end.dateTime)}
+        {format(event.start.dateTime || event.start.date)}-{format(event.end.dateTime || event.end.date)}
       </div>
     </Card>
   );

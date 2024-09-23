@@ -33,6 +33,7 @@ import SimpleLayout from './layouts/SimpleLayout';
 import PublicationView from './pages/pubs';
 import ExperienceView from './pages/experience';
 import MiscellaneousView from './pages/miscellaneous';
+import { ScheduleView } from './pages/schedule';
 
 NProgress.configure({
   minimum: 0.3,
@@ -127,6 +128,7 @@ function App() {
               <Route path="/experiences" element={<ExperienceView />} />
               <Route path="/miscellaneous" element={<MiscellaneousView />} />
             </Route>
+            <Route path="/schedule" element={<ScheduleView />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
