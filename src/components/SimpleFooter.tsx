@@ -5,8 +5,11 @@ import { useEffect, useState } from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { getEvents } from 'src/utils';
+import { useSelector } from 'react-redux';
+import { RootState } from 'src/store';
 
 export default function SimpleFooter() {
+  const currentTheme = useSelector((state: RootState) => state.theme.value);
   const [events, setEvents] = useState([]);
   async function updateEvents(isMounted: boolean) {
     getEvents(true).then((events) => {
@@ -46,14 +49,15 @@ export default function SimpleFooter() {
       <div className="flex justify-center flex-wrap gap-4">
         <div className="flex-shrink-0 w-[300px] mb-4" id="map-container" key="unique-map"></div>
         <Link to="/schedule">
-          <div className="flex-shrink-0 w-[300px] h-[176px]">
+          <div className={'flex-shrink-0 w-[300px] h-[176px] ' + currentTheme}>
             <Calendar
-              // calendarType="US"
+              calendarType="hebrew"
               minDetail="year"
               className="hide-navigation tile-center"
               tileClassName={({ date, activeStartDate }) => {
                 return date.getMonth() !== activeStartDate.getMonth() ? 'disabled' : '';
               }}
+              tileDisabled={({ date, activeStartDate }) => date.getMonth() !== activeStartDate.getMonth()}
               formatShortWeekday={(_, date) => moment(date).format('dd')[0]}
               tileContent={({ date }) => {
                 const year = date.getFullYear();

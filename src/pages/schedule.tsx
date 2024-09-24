@@ -7,13 +7,15 @@ import { IconButton, CircularProgress } from '@mui/material';
 import { useMemo } from 'react';
 import { format, getEvents } from 'src/utils';
 import AppEventCard from 'src/components/AppEventCard';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { RootState } from 'src/store';
 
 function sameDay(d1: Date, d2: Date) {
   return d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate();
 }
 
 export function ScheduleView() {
+  const currentTheme = useSelector((state: RootState) => state.theme.value);
   const [events, setEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const today = new Date();
@@ -70,7 +72,7 @@ export function ScheduleView() {
         calendarType="hebrew"
         onClickDay={setSelectedDate}
         minDetail="year"
-        className="full"
+        className={'full ' + currentTheme}
         navigationLabel={({ label }) => (
           <div className="flex items-center justify-center">
             <div>{label}</div>
@@ -83,6 +85,9 @@ export function ScheduleView() {
             : date.getMonth() !== activeStartDate.getMonth()
             ? 'disabled'
             : '';
+        }}
+        tileDisabled={({ date, activeStartDate }) => {
+          return date.getMonth() !== activeStartDate.getMonth();
         }}
         tileContent={({ date, view }) => {
           if (view !== 'month') return <></>;

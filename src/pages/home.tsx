@@ -15,11 +15,13 @@ import { RootState } from 'src/store';
 import { Link } from 'react-router-dom';
 import { getPubs } from 'src/const/pubs';
 import { getRExps } from 'src/const/exps';
+import { getNews } from 'src/const/news';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const pubs = getPubs('desc', true);
 const exps = getRExps('desc');
+const news = getNews('desc');
 
 export default function Home() {
   const [showMoreNews, setShowMoreNews] = useState(false);
@@ -114,17 +116,17 @@ export default function Home() {
           <li>GPU cluster orchestration</li>
         </ul>
       </section>
-      {/* <div className="mt-10 pb-2 text-2xl font-bold border-0 border-b border-gray-200 border-solid">News</div>
+      <div className="mt-10 pb-2 text-2xl font-bold border-0 border-b border-gray-200 border-solid">News</div>
       <section>
         <ul className="pl-6">
           {news.slice(0, 2).map((n, i: number) => (
             <ReactMarkdown
               key={i}
               components={{
-                p: ({ className, children }) => <li className={className}>{children}</li>,
+                p: ({ className, children }) => <li className={className + " mb-2"}>{children}</li>,
               }}
             >
-              {`[${moment(n.date).format('MM/DD/YYYY')}] ${n.title} ${n.highlighted ? '⭐️' : ''}`}
+              {`[**${moment(n.date, 'MM/DD/YYYY').format('MMM YYYY')}**] ${n.title} ${n.highlighted ? '⭐️' : ''}`}
             </ReactMarkdown>
           ))}
           {showMoreNews &&
@@ -132,17 +134,22 @@ export default function Home() {
               <ReactMarkdown
                 key={i}
                 components={{
-                  p: ({ className, children }) => <li className={className}>{children}</li>,
+                  p: ({ className, children }) => <li className={className + " mb-2"}>{children}</li>,
                 }}
               >
-                {`[${moment(n.date).format('MM/DD/YYYY')}] ${n.title}`}
+                {`[**${moment(n.date, 'MM/DD/YYYY').format('MMM YYYY')}**] ${n.title}`}
               </ReactMarkdown>
             ))}
         </ul>
-        <span className="text-blue-500 cursor-pointer hover:underline" onClick={() => setShowMoreNews((show) => !show)}>
-          {showMoreNews ? 'view less' : 'view more'}
-        </span>
-      </section> */}
+        {news.length > 2 && (
+          <span
+            className="text-blue-500 cursor-pointer hover:underline"
+            onClick={() => setShowMoreNews((show) => !show)}
+          >
+            {showMoreNews ? 'view less' : 'view more'}
+          </span>
+        )}
+      </section>
       <div className="mt-10 pb-2 text-2xl font-bold border-0 border-b border-gray-200 border-solid">
         Selected Publictions
       </div>

@@ -4,5 +4,6 @@ export const simpleProviders: IconProp[] = [
   ['fac' as IconPrefix, 'cv' as IconName],
   ['fac' as IconPrefix, 'google-scholar' as IconName],
   ['fab', 'github'],
-  ['fab', 'twitter'],
+  ['fab', 'x-twitter'],
+  ['fab', 'linkedin'],
 ];
