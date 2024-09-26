@@ -43,9 +43,9 @@ export default function MiscellaneousView() {
             I am a slow walker, but I never walk backwards.
           </div>
           <p className="text-sm px-8 pb-2 text-justify leading-[1.2] tracking-tighter">
-            Hi, this is Kai Wang, an ordinary person who took several years to figure out hist goal in life. Luckily, I
+            Hi, this is Kai Wang, an ordinary person who took several years to figure out his goal in life. Luckily, I
             finally found it -- I want to built systems that can benefit people's daily lives. It is a challenging goal,
-            but I will try until the last moment. Wish me luck~ ✨
+            but I will try until the last moment. Wish me luck! ✨
             {/* <br />
             <br />
             This site will serve as a personal blog as I will record my life here. Stay tuned if you are interested, and

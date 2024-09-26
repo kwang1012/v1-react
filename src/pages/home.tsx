@@ -73,6 +73,11 @@ export default function Home() {
               <span className="text-blue-500 hover:underline cursor-pointer">kw37@illinois.edu</span>
             </a>
           </div>
+          <div className="mt-2 text-gray-500 leading-5">
+            Room #3111, Thomas M. Siebel Center
+            <br />
+            201 N. Goodwin Avenue, Urbana, IL, 61801, USA
+          </div>
         </div>
       </div>
       <div className="mt-10 pb-2 text-2xl font-bold border-0 border-b border-gray-200 border-solid">About Me</div>
@@ -123,7 +128,7 @@ export default function Home() {
             <ReactMarkdown
               key={i}
               components={{
-                p: ({ className, children }) => <li className={className + " mb-2"}>{children}</li>,
+                p: ({ className, children }) => <li className={className + ' mb-2'}>{children}</li>,
               }}
             >
               {`[**${moment(n.date, 'MM/DD/YYYY').format('MMM YYYY')}**] ${n.title} ${n.highlighted ? '⭐️' : ''}`}
@@ -134,7 +139,7 @@ export default function Home() {
               <ReactMarkdown
                 key={i}
                 components={{
-                  p: ({ className, children }) => <li className={className + " mb-2"}>{children}</li>,
+                  p: ({ className, children }) => <li className={className + ' mb-2'}>{children}</li>,
                 }}
               >
                 {`[**${moment(n.date, 'MM/DD/YYYY').format('MMM YYYY')}**] ${n.title}`}
