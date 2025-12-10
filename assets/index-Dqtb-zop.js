@@ -685,12 +685,58 @@ news:
     date: '8/21/2024'
   - title: 'I am TAing for **CS341: System Programming** for Spring 2025.'
     date: '1/21/2025'
+  - title: One paper is accepted at **NSDI'26**
+    highlighted: true
+    date: 12/10/2025
 miscellaneous:
   name: Kai-Siang Wang (Kai)
   description: I am a slow walker, but I never walk backwards.
   detail: Hi, this is Kai Wang, an ordinary person who took several years to figure out his goal in life. Luckily, I finally found it -- I want to build systems that can benefit people's daily lives. It is a challenging goal, but I will try until the last moment. Wish me luck! ✨
   interests: anime, movies, baseball
-`,lk1=`- title: 'A Reservation-Based List Scheduling for Embedded Systems with Memory Constraints'
+`,lk1=`- title: 'RASC: Enhancing observability & programmability in smart spaces'
+  authorList:
+  - name: 'Anna Karanika'
+    type: 'First Author'
+  - name: 'Kai-Siang Wang'
+    type: 'Second Author'
+  - name: 'Han-Ting Liang'
+    type: 'Second Author'
+  - name: 'Shalni Sundram'
+    type: 'Second Author'
+  - name: 'Indranil Gupta'
+    type: 'Advisor'
+  venue:
+    url: 'https://www.usenix.org/conference/nsdi26'
+    name: '23rd USENIX Symposium on Networked Systems Design and Implementation'
+    short: "NSDI'26"
+    status: ''
+  abstract: > 
+    While RPCs form the bedrock of systems stacks, we posit
+    that IoT device collections in smart spaces like homes, ware-
+    houses, and office buildings—which are all “user-facing”—
+    require a more expressive abstraction. Orthogonal to prior
+    work, which improved the reliability of IoT communication,
+    our work focuses on improving the observability and pro-
+    grammability of IoT actions. We present the RASC (Request-
+    Acknowledge-Start-Complete) abstraction, which provides
+    acknowledgments at critical points after an IoT device action
+    is initiated. RASC is a better fit for IoT actions, which natu-
+    rally vary in length spatially (across devices) and temporally
+    (across time, for a given device). RASC also enables the de-
+    sign of several new features: predicting action completion
+    times accurately, detecting failures of actions faster, allowing
+    fine-grained dependencies in programming, and scheduling.
+    RASC is intended to be implemented atop today’s available
+    RPC mechanisms, rather than as a replacement. We inte-
+    grated RASC into a popular and open-source IoT framework
+    called Home Assistant. Our trace-driven evaluation finds that
+    RASC meets latency SLOs, especially for long actions that
+    last O(mins), which are common in smart spaces. Our schedul-
+    ing policies for home automations (e.g., routines) outperform
+    state-of-the-art counterparts by 10%-55%.
+  image: '/images/rasc.png'
+  selected: true
+- title: 'A Reservation-Based List Scheduling for Embedded Systems with Memory Constraints'
   authorList:
     - name: 'Kai-Siang Wang'
       type: 'First Author'
@@ -730,7 +776,7 @@ miscellaneous:
       isbn="978-3-031-29927-8"
     }
   date: '12/7/2022'
-  selected: true
+  # selected: true
 
 - title: 'ALBERT: An automatic learning based execution and resource management system for optimizing Hadoop workload in clouds'
   authorList:
@@ -772,6 +818,7 @@ miscellaneous:
       author = {Chen-Chun Chen and Kai-Siang Wang and Yu-Tung Hsiao and Jerry Chou},
     }
   date: '6/1/2022'
+  selected: true
 
 - title: 'Optimal Static Bidding Strategy for Running Batch Jobs with Hard Deadline Constraints on Spot Instances'
   authorList:
@@ -815,7 +862,7 @@ miscellaneous:
       issn={2184-5042},
     }
   date: '4/23/2023'
-  selected: true
+  # selected: true
 `,ik1=`teaching:
   - title: 'Computer Science Department'
     corp: 'University of Illinois Urbana-Champaign'
