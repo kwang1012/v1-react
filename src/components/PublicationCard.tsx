@@ -1,20 +1,37 @@
 import { useState } from 'react';
 
 type Props = {
-  pub: any;
+  pub: {
+    title: string;
+    authorList: { name: string; type: string }[];
+    venue: { name: string; short: string; url?: string };
+    abstract: string;
+    url?: string;
+    bib?: string;
+    code?: string;
+    image?: string;
+  };
 };
 
 export default function PublicationCard({ pub, ...props }: Props) {
-  const [showing, setShowing] = useState<null | string>(null);
+  const [showing, setShowing] = useState<null | 'abstract' | 'bib'>(null);
   return (
     <div {...props} className="shadow-md mt-4 border border-solid border-gray-200 p-5 rounded-md flex flex-wrap">
       <div className=" w-30 shrink-0 relative flex items-start flex-col">
-        <div className="bg-primary text-white p-1 rounded-md text-sm z-10 top-0">{pub.venue.short}</div>
+        <div
+          className={[
+            'bg-primary text-white p-1 rounded-md text-sm z-10 top-0',
+            pub.venue.url ? 'cursor-pointer' : '',
+          ].join(' ')}
+          onClick={() => pub.venue.url && window.open(pub.venue.url, '_blank')}
+        >
+          {pub.venue.short}
+        </div>
         {pub.image && <img src={pub.image} width="100%" className="object-contain my-auto" />}
       </div>
       <div className="ml-5 flex-1">
         <div
-          className=" font-extrabold line-clamp-2 hover:underline"
+          className={['font-extrabold line-clamp-2 hover:underline', pub.url ? 'cursor-pointer' : ''].join(' ')}
           onClick={() => pub.url && window.open(pub.url, '_blank')}
         >
           {pub.title}
@@ -44,7 +61,12 @@ export default function PublicationCard({ pub, ...props }: Props) {
           </span>
           <span>
             [
-            <a className="cursor-pointer text-blue-500! hover:underline!" href={pub.url} rel="noreferrer" target="_blank">
+            <a
+              className="cursor-pointer text-blue-500! hover:underline!"
+              href={pub.url}
+              rel="noreferrer"
+              target="_blank"
+            >
               Paper
             </a>
             ]
@@ -57,6 +79,20 @@ export default function PublicationCard({ pub, ...props }: Props) {
                 onClick={() => setShowing((value) => (value === 'bib' ? null : 'bib'))}
               >
                 Bibtex
+              </a>
+              ]
+            </span>
+          )}
+          {pub.code && (
+            <span>
+              [
+              <a
+                className="cursor-pointer text-blue-500! hover:underline!"
+                href={pub.code}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Code
               </a>
               ]
             </span>

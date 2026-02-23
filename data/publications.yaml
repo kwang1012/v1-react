@@ -15,6 +15,9 @@
     name: '23rd USENIX Symposium on Networked Systems Design and Implementation'
     short: "NSDI'26"
     status: ''
+  url: 'https://www.usenix.org/conference/nsdi26/presentation/karanika'
+  # slides:
+  code: 'https://github.com/kwang1012/RASCal-NSDI-26-Artifacts.git'
   abstract: > 
     While RPCs form the bedrock of systems stacks, we posit
     that IoT device collections in smart spaces like homes, ware-
@@ -31,7 +34,7 @@
     sign of several new features: predicting action completion
     times accurately, detecting failures of actions faster, allowing
     fine-grained dependencies in programming, and scheduling.
-    RASC is intended to be implemented atop today’s available
+    RASC is intended to be implemented atop today's available
     RPC mechanisms, rather than as a replacement. We inte-
     grated RASC into a popular and open-source IoT framework
     called Home Assistant. Our trace-driven evaluation finds that
@@ -40,6 +43,7 @@
     ing policies for home automations (e.g., routines) outperform
     state-of-the-art counterparts by 10%-55%.
   image: '/images/rasc.png'
+  date: '05/04/2026'
   selected: true
 - title: 'A Reservation-Based List Scheduling for Embedded Systems with Memory Constraints'
   authorList:
