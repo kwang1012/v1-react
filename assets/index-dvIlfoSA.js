@@ -710,7 +710,7 @@ miscellaneous:
     name: '23rd USENIX Symposium on Networked Systems Design and Implementation'
     short: "NSDI'26"
     status: ''
-  url: 'https://www.usenix.org/conference/nsdi26/presentation/karanika'
+  url: 'https://dprg.cs.uiuc.edu/data/files/2026/rascal-nsdi26fall-final1353.pdf'
   # slides:
   code: 'https://github.com/kwang1012/RASCal-NSDI-26-Artifacts.git'
   abstract: > 
