@@ -41,7 +41,7 @@ export default function PublicationCard({ pub, ...props }: Props) {
             <span key={i}>
               <span className={author.name.includes('Kai-Siang Wang') ? 'font-bold' : ''}>
                 {author.name}
-                {author.type === 'First Author' && '*'}
+                {/* {author.type === 'First Author' && '*'} */}
               </span>
               {i !== pub.authorList.length - 1 && <span>, </span>}
             </span>
