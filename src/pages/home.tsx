@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-wrap justify-center md:justify-start">
-        <img src="/avatar.jpg" width={182} className="rounded-lg object-cover" />
+        <img src="/avatar.png" width={182} className="rounded-lg object-cover" />
         <div className="sm:ml-10">
           <h1 className="mb-0">{data.name}</h1>
           <ReactMarkdown

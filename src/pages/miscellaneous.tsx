@@ -35,7 +35,7 @@ export default function MiscellaneousView() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
         >
-          <img src="/avatar.jpg" width={150} height={150} className="rounded-full object-cover shadow-app" />
+          <img src="/avatar.png" width={150} height={150} className="rounded-full object-cover shadow-app" />
         </motion.div>
         <motion.div
           className="mt-20 pt-24 max-w-[600px] mx-auto bg-[#f8f9fb] dark:bg-[#131313] rounded-md shadow-app flex flex-col items-center text-center duration-400"
