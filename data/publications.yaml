@@ -15,7 +15,7 @@
     name: '23rd USENIX Symposium on Networked Systems Design and Implementation'
     short: "NSDI'26"
     status: ''
-  url: 'https://www.usenix.org/conference/nsdi26/presentation/karanika'
+  url: '/assets/pdf/rasc_paper.pdf'
   # slides:
   code: 'https://github.com/kwang1012/RASCal-NSDI-26-Artifacts.git'
   abstract: > 
@@ -56,7 +56,7 @@
     name: 'The 23rd International Conference on Parallel and Distributed Computing, Applications and Technologies'
     short: "PDCAT'22"
     status: ''
-  url: 'https://link.springer.com/chapter/10.1007/978-3-031-29927-8_12'
+  url: '/assets/pdf/reservation_paper.pdf'
   abstract: >
     Many embedded systems have hard resource constraints that make schedules found by list scheduling
     heuristics invalid. In this paper, we show the problems caused by memory constraints and deadlocks
@@ -100,7 +100,7 @@
   venue:
     name: 'Journal of Parallel and Distributed Computing'
     short: "JPDC'22"
-  url: 'https://www.sciencedirect.com/science/article/pii/S0743731522001289'
+  url: '/assets/pdf/albert_paper.pdf'
   abstract: >
     Hadoop is a popular computing framework designed to deliver timely and cost-effective data processing
     on a large cluster of commodity machines. It relieves the burden of the programmers dealing with distributed
@@ -141,7 +141,7 @@
     name: 'The International Conference on Cloud Computing and Services Science, 2023'
     short: "CLOSER'23"
     status: ''
-  url: 'https://www.scitepress.org/PublicationsDetail.aspx?ID=Ajk01eQ6KJU=&t=1'
+  url: '/assets/pdf/bidding_paper.pdf'
   abstract: >
     Spot-instances (SI) is an auction-based pricing scheme used by cloud providers. It allows users to place
     bids for spare computing instances and rent them at a substantially lower price compared to the fixed
