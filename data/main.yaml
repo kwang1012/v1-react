@@ -1,5 +1,5 @@
 name: Kai Wang
-description: A 3rd-year PhD student @ **UIUC**
+description: A 4th-year PhD student @ **UIUC**
 email: kw37@illinois.edu
 location: |
   Room #3111, Thomas M. Siebel Center
@@ -16,15 +16,15 @@ providers:
   - type: linkedin
     link: https://www.linkedin.com/in/kai-wang-1b57b51a8/
 about: |
-  I am a third-year Ph.D. student at the [University of Illinois at Urbana-Champaign](https://illinois.edu/), working with Prof. [Indy Gupta](https://indy.cs.illinois.edu/) as a member of the [Distributed Protocols Research Group (DPRG)](https://dprg.cs.uiuc.edu/).
+  I am a fourth-year Ph.D. student at the [University of Illinois at Urbana-Champaign](https://illinois.edu/), working with Prof. [Indy Gupta](https://indy.cs.illinois.edu/) as a member of the [Distributed Protocols Research Group (DPRG)](https://dprg.cs.uiuc.edu/).
 
   Before starting my Ph.D., I received my Bachelor's and Master's degrees from [National Tsing Hua University](https://nthu-en.site.nthu.edu.tw/), Taiwan.
 
-  My research interest covers topics around AIOps, ML Systems, Internet of Things, and Cloud Computing.
+  My research interest covers topics around Agentic workflows, Internet of Things, and Cloud Computing.
 
   Currently, I am especially interested in and focus on:
-  - **AIOps**
-  - LLM Orchestration
+  - **Agentic workflows**
+  - AI Agent for IoT debuggability
   - Smart Home
 news:
   - title: I will be doing an externship at **IBM Research** in Summer 2026!
@@ -32,7 +32,7 @@ news:
   - title: I will be attending **NSDI'26**
     date: 5/4/2026
   - title: One paper is accepted at **NSDI'26**
-    highlighted: true
+    # highlighted: true
     date: 12/10/2025
   - title: One paper is accepted to **CLOSER'23**
     # highlighted: false/true
