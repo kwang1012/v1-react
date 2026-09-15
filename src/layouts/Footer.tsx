@@ -18,7 +18,7 @@ export default function Footer() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (window.location.hostname.startsWith('localhost')) {
-      console.log('Skipping ClustrMaps in local dev');
+      console.log('Skipping MapMyVisitors in local dev');
       return;
     }
 
@@ -29,8 +29,8 @@ export default function Footer() {
     const script = document.createElement('script');
 
     script.src =
-      '//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=m&d=BzQWaJqCphqTR0pJqF-A-6AngIi1xhkwE-89GUXn7M4&co=cc3363&cmo=ff7272&cmn=78f778';
-    script.id = 'clustrmaps';
+      '//mapmyvisitors.com/map.js?cl=ffffff&w=a&t=m&d=GbeRkUaa1BgogUCGorQ2dSq_oHkKdq8nu9SvmgnN9dw&co=cc3363&cmo=ff7272&cmn=78f778';
+    script.id = 'mapmyvisitors';
 
     script.onload = () => {
       if (isMounted) setLoading(false);
