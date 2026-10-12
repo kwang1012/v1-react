@@ -4,7 +4,7 @@ type Props = {
   pub: {
     title: string;
     authorList: { name: string; type: string }[];
-    venue: { name: string; short: string; url?: string };
+    venue: { name: string; short: string; url?: string; status?: string };
     abstract: string;
     url?: string;
     bib?: string;
@@ -14,19 +14,27 @@ type Props = {
 };
 
 export default function PublicationCard({ pub, ...props }: Props) {
+  const [authorsExpanded, setAuthorsExpanded] = useState(false);
   const [showing, setShowing] = useState<null | 'abstract' | 'bib'>(null);
   return (
     <div {...props} className="shadow-md mt-4 border border-solid border-gray-200 p-5 rounded-md flex flex-wrap">
       <div className=" w-30 shrink-0 relative flex items-start flex-col">
-        <div
-          className={[
-            'bg-primary text-white p-1 rounded-md text-sm z-10 top-0',
-            pub.venue.url ? 'cursor-pointer' : '',
-          ].join(' ')}
-          onClick={() => pub.venue.url && window.open(pub.venue.url, '_blank')}
-        >
-          {pub.venue.short}
-        </div>
+        {pub.venue.short && (
+          <div
+            className={[
+              'bg-primary text-white p-1 rounded-md text-sm z-10 top-0',
+              pub.venue.url ? 'cursor-pointer' : '',
+            ].join(' ')}
+            onClick={() => pub.venue.url && window.open(pub.venue.url, '_blank')}
+          >
+            {pub.venue.short}
+          </div>
+        )}
+        {pub.venue.status && (
+          <div className="bg-amber-100 text-amber-800 border border-solid border-amber-300 p-1 rounded-md text-sm mt-1">
+            {pub.venue.status}
+          </div>
+        )}
         {pub.image && <img src={pub.image} width="100%" className="object-contain my-auto" />}
       </div>
       <div className="ml-5 flex-1">
@@ -36,7 +44,11 @@ export default function PublicationCard({ pub, ...props }: Props) {
         >
           {pub.title}
         </div>
-        <div className="my-2 line-clamp-1">
+        <div
+          className={['my-2 cursor-pointer', authorsExpanded ? '' : 'line-clamp-1'].join(' ')}
+          title={authorsExpanded ? 'Show less' : 'Show all authors'}
+          onClick={() => setAuthorsExpanded((value) => !value)}
+        >
           {pub.authorList.map((author: any, i: number) => (
             <span key={i}>
               <span className={author.name.includes('Kai-Siang Wang') ? 'font-bold' : ''}>
@@ -59,18 +71,20 @@ export default function PublicationCard({ pub, ...props }: Props) {
             </a>
             ]
           </span>
-          <span>
-            [
-            <a
-              className="cursor-pointer text-blue-500! hover:underline!"
-              href={pub.url}
-              rel="noreferrer"
-              target="_blank"
-            >
-              Paper
-            </a>
-            ]
-          </span>
+          {pub.url && (
+            <span>
+              [
+              <a
+                className="cursor-pointer text-blue-500! hover:underline!"
+                href={pub.url}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Paper
+              </a>
+              ]
+            </span>
+          )}
           {pub.bib && (
             <span>
               [

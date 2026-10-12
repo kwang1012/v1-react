@@ -1,15 +1,36 @@
+- title: "I'll Take the Wheel: How Site Reliability Engineers Navigate the New World of AIOps"
+  authorList:
+    - name: 'Kai-Siang Wang'
+      type: 'First Author'
+    - name: 'Anna Karanika'
+      type: 'Second Author'
+    - name: 'Yinfang Chen'
+    - name: 'Laura Shwartz'
+    - name: 'Yu Deng'
+    - name: 'Saurabh Jha'
+    - name: 'Indranil Gupta'
+  venue:
+    url: 'https://chi2027.acm.org/'
+    name: ""
+    short: "CHI'27"
+    status: 'Under Review'
+  abstract: >
+    AI-based tools for operations, commonly called AIOps, are increasingly used by datacenter and cloud maintenance personnel (Site Reliability Engineers, or SREs) to detect, diagnose, and mitigate operational incidents. We present the first study on adoption and trust perceptions among SREs towards AIOps tools used in operational workflows. We report results from a survey of 32 SREs, and semi-structured interviews of 13 SREs. Respondents include participants from a large enterprise, a university computing center, and five smaller companies. We characterize SRE trust perceptions and shifts along multiple dimensions: across all phases from incident to response, inside an organization (e.g., teams, seniority), and across industry vs. university. Results surface three structural barriers to adoption that technical AIOps research has largely overlooked. Overcoming them requires externalizing the tacit context human judgment relies on, building shared infrastructure for propagating trust and attributing actions across multi-agent teams, and designing for actionability rather than persuasive explanation.
+  image: '/images/aiops.png'
+  date: '10/12/2026'
+  selected: true
 - title: 'RASC: Enhancing observability & programmability in smart spaces'
   authorList:
-  - name: 'Anna Karanika'
-    type: 'First Author'
-  - name: 'Kai-Siang Wang'
-    type: 'Second Author'
-  - name: 'Han-Ting Liang'
-    type: 'Second Author'
-  - name: 'Shalni Sundram'
-    type: 'Second Author'
-  - name: 'Indranil Gupta'
-    type: 'Advisor'
+    - name: 'Anna Karanika'
+      type: 'First Author'
+    - name: 'Kai-Siang Wang'
+      type: 'Second Author'
+    - name: 'Han-Ting Liang'
+      type: 'Second Author'
+    - name: 'Shalni Sundram'
+      type: 'Second Author'
+    - name: 'Indranil Gupta'
+      type: 'Advisor'
   venue:
     url: 'https://www.usenix.org/conference/nsdi26'
     name: '23rd USENIX Symposium on Networked Systems Design and Implementation'
@@ -18,7 +39,7 @@
   url: '/assets/pdf/rasc_paper.pdf'
   # slides:
   code: 'https://github.com/kwang1012/RASCal-NSDI-26-Artifacts.git'
-  abstract: > 
+  abstract: >
     While RPCs form the bedrock of systems stacks, we posit
     that IoT device collections in smart spaces like homes, ware-
     houses, and office buildings—which are all “user-facing”—
@@ -127,7 +148,7 @@
       author = {Chen-Chun Chen and Kai-Siang Wang and Yu-Tung Hsiao and Jerry Chou},
     }
   date: '6/1/2022'
-  selected: true
+  # selected: true
 
 - title: 'Optimal Static Bidding Strategy for Running Batch Jobs with Hard Deadline Constraints on Spot Instances'
   authorList:
